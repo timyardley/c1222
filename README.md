@@ -169,40 +169,45 @@ Command line tool allows calculating a checksum on arbitrary ascii hex strings.
     
     The listed IDE defines are the ones currently defined in the Borland IDE provided.
     
-#### 3.2.1 C1222TEST             Test application has a simple meter simulation with C12.22 stack to 
-                            communication module (using testlink physical layer) connected to 
-                            via TCPIP PC port 27015.  Simulated meter aptitle is .68.33.3.  The 
-                            simulation has a table 0, 3, 5, 51, 52, and 2048.  Tables 5 and 2048 are writable.  The 
-                            meter is sessionless only.
-    C1222test.ide               Borland C++ 5.02 IDE
+#### 3.2.1 C1222TEST
+	Test application has a simple meter simulation with C12.22 stack to communication module (using testlink physical layer) connected to via TCPIP PC port 27015.  Simulated meter aptitle is .68.33.3.  The simulation has a table 0, 3, 5, 51, 52, and 2048.  Tables 5 and 2048 are writable.  The meter is sessionless only.
+    
+	C1222test.ide               Borland C++ 5.02 IDE
     c1222test.c                 Source for the application
     
     IDE Defines:                WANT_TCPIP, AVOID_PORTAB_H, C1222_INCLUDE_COMMMODULE, C1222_INCLUDE_DEVICE, WANT_LOG, 
                                 C1222_INCLUDE_RELAY, C1222TOOL, AVOID_SLB_H, C1222_TABLESERVER_BIGENDIAN                         
                             
-#### 3.2.2 C1222APTITLE          Application converts universal ids between hex and text.
-    c1222aptitletest.cpp        Source for this application.
+#### 3.2.2 C1222APTITLE
+	Application converts universal ids between hex and text.
+    
+	c1222aptitletest.cpp        Source for this application.
     C1222aptitletest.ide        Borland C++ 5.02 IDE
     How to use c1222aptitle.doc Documentation.
     c1222aptitle.exe            Windows application.
     
     IDE Defines:                AVOID_PORTAB_H, AVOID_SLB_H, C1222TOOL
     
-#### 3.2.3 ENCRYPTION            Test application encrypts and decrypts arbitrary hex strings using 
-                            C12.22 encryption.
+#### 3.2.3 ENCRYPTION
+	Test application encrypts and decrypts arbitrary hex strings using C12.22 encryption.
+
     c1222testcbc.ide            Borland C++ 5.02 IDE
     c1222testcbc.exe            Windows application. (source is in c1222encrypt.c)
     
     IDE Defines:                WANT_MAIN, AVOID_PORTAB_H, AVOID_SLB_H, C1222TOOL
 
-#### 3.2.4 CRC                   Application calculates CRC on arbitrary ascii hex strings
-    Testcrc.ide                 Borland C++ 5.02 IDE (source is embedded in c1222dl_crc.c).
+#### 3.2.4 CRC
+	Application calculates CRC on arbitrary ascii hex strings
+    
+	Testcrc.ide                 Borland C++ 5.02 IDE (source is embedded in c1222dl_crc.c).
     Testcrc.exe                 Windows application.
     
     IDE Defines:                WANT_MAIN, AVOID_PORTAB_H, C1222TOOL, AVOID_SLB_H
     
-#### 3.2.5 TESTLIBRARY           Library of routines used by the test applications
-    network.cpp                 Interface to a windows serial port.
+#### 3.2.5 TESTLIBRARY
+	Library of routines used by the test applications
+    
+	network.cpp                 Interface to a windows serial port.
     network.hpp                 Header for network.cpp
     uart.cpp                    Connects uart oriented serial to a windows serial port (network).
     uart.h                      Header for uart.cpp
@@ -213,8 +218,9 @@ Command line tool allows calculating a checksum on arbitrary ascii hex strings.
     c1222pl_pc.c                Physical layer for a Windows PC serial port.
     c1222pl_testlink.c          C12.22 physical layer for a test link allowing multiple stacks in the same Windows application.
     
-#### 3.2.6 SIMPLESERIALDEVICE    Meter simulation with C12.22 interface to PC serial port.  Meter properties 
-                            are the same as for C1222TEST.
+#### 3.2.6 SIMPLESERIALDEVICE 
+	Meter simulation with C12.22 interface to PC serial port.  Meter properties are the same as for C1222TEST.
+
     simple_serial_device.ide    Borland C++ 5.02 IDE
     simple_serial_device.c      Application source.
     simple_serial_device.exe    Windows application.
@@ -222,11 +228,9 @@ Command line tool allows calculating a checksum on arbitrary ascii hex strings.
     IDE Defines:                C1222_DEVICE_ONLY, AVOID_PORTAB_H, C1222_INCLUDE_DEVICE, WANT_LOG, C1222TOOL, AVOID_SLB_H,
                                 Bool=Boolean, Signed32=long
     
-#### 3.2.7 SIMPLETCPIPCOMMMODULE Comm module with C12.22 interface to PC serial port and TCPIP application
-                            interface to tcpip port 27015.  A PC running simpleserialdevice should be able
-                            to talk to a pc running simpletcpipcommmodule through a serial port.  If it
-                            does not seem to be working make sure both are pointed at the right port (first
-                            parameter is port number) and maybe try a null modem or try removing a null modem.
+#### 3.2.7 SIMPLETCPIPCOMMMODULE
+	Comm module with C12.22 interface to PC serial port and TCPIP application interface to tcpip port 27015.  A PC running simpleserialdevice should be able to talk to a pc running simpletcpipcommmodule through a serial port.  If it does not seem to be working make sure both are pointed at the right port (first parameter is port number) and maybe try a null modem or try removing a null modem.
+
     simple_tcpip_cm.ide         Borland C++ 5.02 IDE
     simple_tcpip_cm.c           Application source.
     simple_tcpip_cm.exe         Windows application.
@@ -235,7 +239,9 @@ Command line tool allows calculating a checksum on arbitrary ascii hex strings.
                                 C1222TOOL, SEPARATE_REPLY=0, FORCE_BAUD=19200, AVOID_SLB_H, 
                                 Bool=Boolean, Signed32=long
                                 
-#### 3.2.8 CHECKSUM              Test application calculates the checksum of an ascii hex string.
+#### 3.2.8 CHECKSUM
+	Test application calculates the checksum of an ascii hex string.
+	
     getchecksum.exe             Windows command line application
     getchecksum.cpp             Application source
     getchecksum.ide             Borland C++ 5.02 IDE
@@ -277,29 +283,44 @@ The following symbols may need to be defined in order to build with non-Borland 
 
     AVOID_PORTAB_H                      Portab.h has some needed defines but if this is defined they are provided in 
                                         environment.h
+										
     AVOID_SLB_H                         slb.h has some needed typedefs but if C1222TOOL is defined they will be defined in 
                                         c1222.h
+										
     C1222TOOL                           Needed unless you provide an slb.h
+	
     WANT_TCPIP                          Enables tcpip code in tools that need it
+	
     C1222_INCLUDE_COMMMODULE            Enables comm module code in tools that need it
+	
     C1222_INCLUDE_DEVICE                Enables c1222 device code in tools that need it
+	
     C1222_INCLUDE_RELAY                 Enables relay code in tools that need it
+	
     WANT_MAIN                           Needed in CRC and ENCRYPTION since the main is in the library routine
+	
     C1222_DEVICE_ONLY                   Define if this is definitely a device and not a comm module
+	
     C1222_COMM_MODULE                   Define if this is definitely a comm module and not a device
+	
     Bool=Boolean                        Bool is defined in slb.h but not in c1222.h (oops)
+	
     Signed32=long                       Signed32 is defined in slb.h but not in c1222.h (oops)
+	
     C1222_WANT_SHORT_MESSAGES           Define if you want the untested short message support
+	
     METER_CODE                          This should probably NOT be defined else will need to have a C1222HistLog routine
+	
     ENABLE_LOCAL_PORT_ROUTER            Define if you want untested local port router support
+	
     ENABLE_C1222_OPTICAL_PORT           Define if you want untested optical port support
+	
     __BCPLUSPLUS__                      Needed to get linkage right if compiled in C++
+	
     BORLAND_C                           May be needed to get the right header in c1222localportrouter.c
+	
     C1222_TABLESERVER_BIGENDIAN         This effects byte order of time response in table 52.
 
 ## 6.0 Where's the help file
 
 Sorry, this is it.  Or contact c1222@itron.com and/or visit C1222.net.
-
-
-
